@@ -27,12 +27,12 @@ The SaaS.Permissions.Service module (aka Permissions Service) is a component of 
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://azure.github.io/azure-saas/components/identity/permissions-service/" /><meta property="article:section" content="components" />
 
-<meta property="article:modified_time" content="2022-07-21T16:08:21-04:00" /><meta property="og:site_name" content="Azure SaaS Dev Kit Docs" />
+<meta property="article:modified_time" content="2024-01-26T15:23:19-05:00" /><meta property="og:site_name" content="Azure SaaS Dev Kit Docs" />
 
 <meta itemprop="name" content="SaaS.Permissions.Service">
 <meta itemprop="description" content="Overview The SaaS.Permissions.Service module (aka Permissions Service) is a component of the Identity Framework. It is an API that serves 2 main functions:
  Handles Create, Read, Update, and Delete (CRUD) operations from the rest of the solution for permission data Serves as an endpoint for the Identity Provider to retrieve permission data in order to enrich the user token with claims  How to Run Locally Instructions to get this module running on your local dev machine are located in the module&rsquo;s readme.">
-<meta itemprop="dateModified" content="2022-07-21T16:08:21-04:00" />
+<meta itemprop="dateModified" content="2024-01-26T15:23:19-05:00" />
 <meta itemprop="wordCount" content="734">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="SaaS.Permissions.Service"/>
@@ -42,8 +42,8 @@ The SaaS.Permissions.Service module (aka Permissions Service) is a component of 
 
 
 
-<link rel="preload" href="/azure-saas/scss/main.min.1be0a15341e879d19575dc9d1c603f093f831473c8371d6d0fb83c98c350da92.css" as="style">
-<link href="/azure-saas/scss/main.min.1be0a15341e879d19575dc9d1c603f093f831473c8371d6d0fb83c98c350da92.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/azure-saas/scss/main.min.6f5cd96bf6c17a369ab4138315a3d451055126106103b214d1481bf522d56eb1.css" as="style">
+<link href="/azure-saas/scss/main.min.6f5cd96bf6c17a369ab4138315a3d451055126106103b214d1481bf522d56eb1.css" rel="stylesheet" integrity="">
 
 <script
   src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -310,7 +310,7 @@ The SaaS.Permissions.Service module (aka Permissions Service) is a component of 
 <h3 id="database">Database</h3>
 <p><a href="https://docs.microsoft.com/en-us/ef/core/">Entity Framework Core</a> is used to manage the SQL Server Database schema and connections. We are using <a href="https://docs.microsoft.com/en-us/ef/ef6/modeling/code-first/workflows/new-database">Code First Development</a> and, if no data or schema exists in the database on application startup, the application will automatically create the database schema that is defined in our <a href="https://github.com/Azure/azure-saas/tree/main/src/Saas.Identity/Saas.Permissions/Saas.Permissions.Service/Data">model files</a>. If you make any changes to these models, you will need to preform a <a href="https://docs.microsoft.com/en-us/ef/ef6/modeling/code-first/migrations/">migration</a> to upgrade the database schema.</p>
 <h3 id="microsoft-graph-api">Microsoft Graph API</h3>
-<p>The <a href="https://docs.microsoft.com/en-us/graph/overview">Microsoft Graph API</a> is an API that provides a unified experience for accessing data on users within an Azure AD or Azure AD B2C tenant. Since we are using Azure AD B2C as our default Identity Provider, we must also use the Graph API when it becomes necessary to fetch data on our users. If you&rsquo;d like to replace the identity provider with something else, you must also replace the Graph API calls within the permissions service to gather user data. These areas are clearly labeled with comments inline with the code.</p>
+<p>The <a href="https://docs.microsoft.com/en-us/graph/overview">Microsoft Graph API</a> is an API that provides a unified experience for accessing data on users within a Microsoft Entra or Azure AD B2C tenant. Since we are using Azure AD B2C as our default Identity Provider, we must also use the Graph API when it becomes necessary to fetch data on our users. If you&rsquo;d like to replace the identity provider with something else, you must also replace the Graph API calls within the permissions service to gather user data. These areas are clearly labeled with comments inline with the code.</p>
 <h3 id="swagger">Swagger</h3>
 <p>The Permissions Service uses <a href="https://www.nuget.org/packages/Swashbuckle">Swashbuckle</a> to generate the OpenAPI definition and a UI for testing. This definition is also consumed by the Admin Service to generate its client implementation for interfacing with this API. Read more about using it <a href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-6.0&amp;tabs=visual-studio">here</a>.</p>
 <h2 id="faq-and-design-considerations">FAQ and Design Considerations</h2>
@@ -327,7 +327,7 @@ The SaaS.Permissions.Service module (aka Permissions Service) is a component of 
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified July 21, 2022: <a href="https://github.com/Azure/azure-saas/commit/76162ee62099ce3f41703d03ef3cfb23300d046e">Update documentation to add in api key and remove reference of certificate (76162ee)</a>
+  Last modified January 26, 2024: <a href="https://github.com/Azure/azure-saas/commit/eec4ea1a69ed4cfd39a70a36bf0866a26a994efc">Refactor Azure AD to B2C or Entra (eec4ea1)</a>
 </div>
 
 </div>
